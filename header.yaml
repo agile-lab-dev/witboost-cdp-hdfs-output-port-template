@@ -9,3 +9,4 @@ description: |-
   - Define the data schema as part of the Output Port data contract
   
   After creation you can use the Editor Wizard to customize the component and add more details to the Output Port
+properties: {}
