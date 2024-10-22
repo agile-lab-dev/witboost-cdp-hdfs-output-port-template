@@ -34,10 +34,6 @@ spec:
           default: HDFS Output Port
           ui:options:
             allowArbitraryValues: true
-        fullyQualifiedName:
-          title: Fully Qualified Name
-          type: string
-          description: Output port fully qualified name
         description:
           title: Description
           type: string
@@ -80,6 +76,22 @@ spec:
           ui:property: spec.owner
           ui:options:
             allowArbitraryValues: false
+        domainName:
+          type: string
+          ui:field: EntitySelectionPicker
+          ui:fieldName: domain
+          ui:property: spec.mesh.name
+          ui:options:
+            allowArbitraryValues: false
+          ui:widget: hidden
+        dataproductName:
+          type: string
+          ui:field: EntitySelectionPicker
+          ui:fieldName: dataproduct
+          ui:property: spec.mesh.name
+          ui:options:
+            allowArbitraryValues: false
+          ui:widget: hidden
 
     - title: Data contract schema
       description: |
@@ -157,7 +169,8 @@ spec:
         targetPath: '.'
         values:
           name: '${{ parameters.name }}'
-          fullyQualifiedName: '${{ parameters.fullyQualifiedName }}'
+          domainName: '${{ parameters.domainName }}'
+          dataproductName: '${{ parameters.dataproductName }}'
           description: '${{ parameters.description }}'
           domain: '${{ parameters.domain }}'
           dataproduct: '${{ parameters.dataproduct }}'

@@ -8,7 +8,6 @@ spec:
   lifecycle: experimental
   owner: ${{ values.developmentGroup }}
   mesh:
-    fullyQualifiedName: ${{ values.fullyQualifiedName | dump }}
     description: ${{ values.description | dump }}
     dependsOn:
       - ${{ values.dependsOn }}
